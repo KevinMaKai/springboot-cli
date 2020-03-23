@@ -3,13 +3,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
-    </parent>
-
   <groupId>com.kevinmakai.springproject.cli</groupId>
   <artifactId>springboot-base-cli</artifactId>
     <packaging>pom</packaging>
@@ -42,11 +35,16 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- 所有项目统一fastjson版本，注意此处对其他项目的影响 -->
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
+                <!-- springboot统一管理-->
+                <!-- 使用springboot两种方式: -->
+                <!-- 1)继承父类spring-boot-starter-parent,但是由于maven单继承,再想继承别的module就不可能了-->
+                <!-- 2)使用spring-boot-dependencies,在dependencyManagement中使用scope为import的方式,这种方式解决了多继承,同样也让父类中的dependency是分类,不会那么乱-->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -72,7 +70,10 @@
       </dependency>
       <!-- test end-->
   </dependencies>
+    <!-- 一般构建平台默认是执行父模块的build指令,这个过程会启动reactor机制,同时会带动执行子模块(web)的build指令-->
+    <!-- 抽包和build没有关系,他仅仅是告诉docker服务器我的war包在这里,你复制到web容器里边去吧-->
     <build>
+        <!-- 资源文件加载那些-->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -80,30 +81,16 @@
             </resource>
         </resources>
         <plugins>
-            <!--            <plugin>-->
-            <!--                <groupId>org.springframework.boot</groupId>-->
-            <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--                <version>2.1.6.RELEASE</version>-->
-            <!--                <configuration>-->
-            <!--                    <executable>false</executable>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
+            <!-- 针对spring-boot的maven打包,executable表示是否不要做成可执行文件,否则平台解压缩有问题-->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.6.RELEASE</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <executable>false</executable>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
+            <!-- maven打包成war包,如果是老的web项目理论上讲必须有web.xml,如果没有择报错,但是springboot是没有web.xml,所以就不校验了-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -112,7 +99,24 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+            <!-- 类文件编译级别和编码格式-->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- 配置文件编码格式-->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>
