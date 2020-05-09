@@ -18,20 +18,13 @@
     </modules>
 
     <name>springboot-base-cli</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.kevinmakai.com</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-    <fastjson.version>1.2.60</fastjson.version>
-    <logback.version>1.2.0</logback.version>
-      <mybatis-starter>2.0.1</mybatis-starter>
-      <junit-version>4.12</junit-version>
-      <lombok-version>1.18.2</lombok-version>
-      <mockito-version>1.9.5</mockito-version>
-  </properties>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -49,27 +42,6 @@
         </dependencies>
     </dependencyManagement>
 
-  <dependencies>
-      <!-- Spring Boot Test 依赖 -->
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-test</artifactId>
-          <scope>test</scope>
-      </dependency>
-      <!-- test start-->
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>${junit-version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.mockito</groupId>
-          <artifactId>mockito-all</artifactId>
-          <version>${mockito-version}</version>
-          <scope>test</scope>
-      </dependency>
-      <!-- test end-->
-  </dependencies>
     <!-- 一般构建平台默认是执行父模块的build指令,这个过程会启动reactor机制,同时会带动执行子模块(web)的build指令-->
     <!-- 抽包和build没有关系,他仅仅是告诉docker服务器我的war包在这里,你复制到web容器里边去吧-->
     <build>
