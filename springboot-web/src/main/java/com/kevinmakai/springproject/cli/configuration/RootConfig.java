@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @PropertySources(value = {
     @PropertySource(value = {"classpath:important.properties"}, encoding = "utf-8", factory = PropertySourceFactory.class, ignoreResourceNotFound = true),
-    @PropertySource(value = {"classpath:suffix.properties"}, encoding = "utf-8", ignoreResourceNotFound = true)
 })
 @Configuration
 @EnableAspectJAutoProxy( proxyTargetClass = true)
