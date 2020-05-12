@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="schema" value="muxin-dev"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.kevinmakai.springproject.cli.base.BaseMapper"/>
+        </plugin>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/muxin-dev"
+                        userId="root"
+                        password="123456">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <!--对于生成的pojo所在包-->
+        <javaModelGenerator targetPackage="com.kevinmakai.springproject.cli.domain" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/java"  />
+        <!--对于生成的mapper所在目录-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/resources"/>
+        <!--配置mapper对应的java映射-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.kevinmakai.springproject.cli.mapper" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/java"/>
+        <table tableName="chat_msg"></table>
+        <table tableName="friends_request"></table>
+        <table tableName="my_friends"></table>
+        <table schema="muxin-dev" tableName="users"></table>
+    </context>
+</generatorConfiguration>
