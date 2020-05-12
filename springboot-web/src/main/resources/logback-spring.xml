@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<configuration>
+
+	<springProperty scope="context" name="FILE_MAX_INDEX" source="log.file.maxindex"/>
+	<springProperty scope="context" name="MAX_FILE_SIZE" source="log.file.maxfilesize"/>
+	<springProperty scope="context" name="LOG_HOME" source="log.path"/>
+	<springProperty scope="context" name="LOG_PATTERN" source="log.pattern"/>
+
+	<!-- 打印颜色 -->
+<!--	<property name="LOG_PATTERN" value="%white(%d{yyyy-MM-dd HH:mm:ss.SSS}) %highlight(%lsn) %green([%thread]) %X{req.id} %highlight(%-5level) %green(%class) %boldRed([%method])-%green([%line]) - %cyan(%msg%n)"/>-->
+
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="LOGGER-APP" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/app.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/app-%i.log</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${FILE_MAX_INDEX}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%p] [%C{0}:%L,%M\(\)] [%X{logid}] -%m%n</pattern>
+		</encoder>
+	</appender>
+
+    <!-- sql -->
+	<logger name="org.apache.ibatis"  additivity="false"  level="ERROR">
+        <appender-ref ref="LOGGER-APP" />
+	</logger>
+
+	<logger name="org.mybatis" additivity="false"  level="ERROR">
+        <appender-ref ref="LOGGER-APP" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="LOGGER-APP" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>
