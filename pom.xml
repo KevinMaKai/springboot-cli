@@ -16,7 +16,6 @@
         <module>springboot-rpc</module>
         <module>springboot-dao</module>
         <module>springboot-mybatis-generator</module>
-        <module>springboot-domain</module>
     </modules>
 
     <name>springboot-base-cli</name>
