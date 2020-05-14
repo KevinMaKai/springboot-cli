@@ -23,7 +23,14 @@
       <dependency>
           <groupId>com.kevinmakai.springproject.cli</groupId>
           <artifactId>springboot-common</artifactId>
-          <version>${project.version}</version>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+
+      <!--依赖dao模块-->
+      <dependency>
+          <groupId>com.kevinmakai.springproject.cli</groupId>
+          <artifactId>springboot-dao</artifactId>
+          <version>1.0-SNAPSHOT</version>
       </dependency>
   </dependencies>
 

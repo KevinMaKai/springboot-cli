@@ -14,9 +14,10 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author kevin
  * @date 2020-02-10 16:17
  */
-@SpringBootApplication(scanBasePackages = "com.kevinmakai.springproject.cli",
+@SpringBootApplication(scanBasePackages = {"com.kevinmakai.springproject.cli"},
         scanBasePackageClasses = SpringBootBaseCliStartApplication.class, exclude = {DataSourceAutoConfiguration.class})
 @MapperScan(basePackages = "com.kevinmakai.springproject.cli.mapper")
+//@ComponentScan(basePackages = "com.kevinmakai.springproject.cli.muxin")
 public class SpringBootBaseCliStartApplication extends SpringBootServletInitializer {
 
 
