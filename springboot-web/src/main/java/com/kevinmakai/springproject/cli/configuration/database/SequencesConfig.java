@@ -1,7 +1,7 @@
 package com.kevinmakai.springproject.cli.configuration.database;
 
-import com.kevinmakai.springproject.cli.utils.DBSequence;
-import com.kevinmakai.springproject.cli.utils.DBSequenceUtil;
+import com.kevinmakai.springproject.cli.common.utils.DBSequence;
+import com.kevinmakai.springproject.cli.common.utils.DBSequenceUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

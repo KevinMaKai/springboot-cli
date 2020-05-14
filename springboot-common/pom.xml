@@ -54,6 +54,20 @@
             <artifactId>mapper-spring-boot-starter</artifactId>
             <version>1.2.4</version>
         </dependency>
+        <!--pagehelper -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.13</version>
+        </dependency>
+        <!--pagehelper -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.mybatis.generator</groupId>-->
+        <!--            <artifactId>mybatis-generator-core</artifactId>-->
+        <!--            <version>1.3.7</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--            <optional>true</optional>-->
+        <!--        </dependency>-->
         <!-- junit-->
         <dependency>
             <groupId>junit</groupId>
@@ -105,10 +119,21 @@
             <version>1.0.2</version>
         </dependency>
 
+        <!-- apache 工具类 -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.11</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
+            <version>3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
         </dependency>
 
         <!-- web env provided start -->
@@ -137,5 +162,30 @@
             <version>6.0.16.Final</version>
         </dependency>
         <!-- spring denpend end -->
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.25.Final</version>
+        </dependency>
+
+        <!-- 高性能分布式文件服务器 -->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.26.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <!-- 二维码 -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.3.3</version>
+        </dependency>
     </dependencies>
 </project>

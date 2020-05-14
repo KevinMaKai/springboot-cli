@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kevinmakai.springproject.cli.mapper.UsersMapper">
-  <resultMap id="BaseResultMap" type="com.kevinmakai.springproject.cli.domain.Users">
+<mapper namespace="com.kevinmakai.springproject.cli.dao.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.kevinmakai.springproject.cli.dao.domain.Users">
     <!--
       WARNING - @mbg.generated
     -->

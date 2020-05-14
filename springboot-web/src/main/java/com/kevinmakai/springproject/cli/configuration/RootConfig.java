@@ -1,6 +1,6 @@
 package com.kevinmakai.springproject.cli.configuration;
 
-import com.kevinmakai.springproject.cli.utils.SpringContextHolder;
+import com.kevinmakai.springproject.cli.common.utils.SpringContextHolder;
 import org.springframework.context.annotation.*;
 import org.springframework.core.io.support.PropertySourceFactory;
 import org.springframework.transaction.annotation.EnableTransactionManagement;

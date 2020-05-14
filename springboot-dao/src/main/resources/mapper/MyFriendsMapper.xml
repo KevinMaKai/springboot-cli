@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kevinmakai.springproject.cli.mapper.MyFriendsMapper">
-  <resultMap id="BaseResultMap" type="com.kevinmakai.springproject.cli.domain.MyFriends">
+<mapper namespace="com.kevinmakai.springproject.cli.dao.mapper.MyFriendsMapper">
+  <resultMap id="BaseResultMap" type="com.kevinmakai.springproject.cli.dao.domain.MyFriends">
     <!--
       WARNING - @mbg.generated
     -->

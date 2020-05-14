@@ -17,11 +17,11 @@
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
         <!--对于生成的pojo所在包-->
-        <javaModelGenerator targetPackage="com.kevinmakai.springproject.cli.domain" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/java"  />
+        <javaModelGenerator targetPackage="com.kevinmakai.springproject.cli.dao.domain" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/java"  />
         <!--对于生成的mapper所在目录-->
         <sqlMapGenerator targetPackage="mapper" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/resources"/>
         <!--配置mapper对应的java映射-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.kevinmakai.springproject.cli.mapper" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.kevinmakai.springproject.cli.dao.mapper" targetProject="/Users/makai5/Documents/03_Source/springboot-base-cli/springboot-dao/src/main/java"/>
         <table tableName="chat_msg"></table>
         <table tableName="friends_request"></table>
         <table tableName="my_friends"></table>

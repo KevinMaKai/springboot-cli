@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * 请填写类的描述
@@ -15,6 +16,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  */
 @SpringBootApplication(scanBasePackages = "com.kevinmakai.springproject.cli",
         scanBasePackageClasses = SpringBootBaseCliStartApplication.class, exclude = {DataSourceAutoConfiguration.class})
+@MapperScan(basePackages = "com.kevinmakai.springproject.cli.mapper")
 public class SpringBootBaseCliStartApplication extends SpringBootServletInitializer {
 
 
