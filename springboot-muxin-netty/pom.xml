@@ -11,7 +11,7 @@
 
     <artifactId>springboot-muxin-netty</artifactId>
     <name>springboot-muxin-netty</name>
-    <url>http://www.muxin.com</url>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

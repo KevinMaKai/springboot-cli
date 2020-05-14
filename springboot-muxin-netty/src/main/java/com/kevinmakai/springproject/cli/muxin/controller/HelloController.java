@@ -1,4 +1,4 @@
-package com.kevinmakai.springproject.cli.muxin;
+package com.kevinmakai.springproject.cli.muxin.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

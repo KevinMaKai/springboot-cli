@@ -8,6 +8,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import tk.mybatis.spring.annotation.MapperScan;
 
+import java.lang.annotation.Annotation;
+
 /**
  * 请填写类的描述
  *
@@ -16,7 +18,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  */
 @SpringBootApplication(scanBasePackages = {"com.kevinmakai.springproject.cli"},
         scanBasePackageClasses = SpringBootBaseCliStartApplication.class, exclude = {DataSourceAutoConfiguration.class})
-@MapperScan(basePackages = "com.kevinmakai.springproject.cli.mapper")
+@MapperScan(basePackages = "com.kevinmakai.springproject.cli.dao.mapper")
 //@ComponentScan(basePackages = "com.kevinmakai.springproject.cli.muxin")
 public class SpringBootBaseCliStartApplication extends SpringBootServletInitializer {
 
@@ -38,6 +40,18 @@ public class SpringBootBaseCliStartApplication extends SpringBootServletInitiali
      */
     public static void main(String[] args) {
         SpringApplication.run(SpringBootBaseCliStartApplication.class,args);
+        try {
+            Class clazz = Class.forName("com.kevinmakai.springproject.cli.dao.mapper.UsersMapper");
+            Annotation[] annotations = clazz.getDeclaredAnnotations();
+            for (Annotation annotation : annotations
+                 ) {
+                System.out.println(annotation.annotationType());
+
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println();
         System.out.println("/**********************SPRINGBOOT-BASE-CLI-STARTED****************************/");
 
     }
