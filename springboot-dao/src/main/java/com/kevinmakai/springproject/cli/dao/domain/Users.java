@@ -16,7 +16,7 @@ public class Users {
     @Column(name = "face_image_big")
     private String faceImageBig;
 
-    private String nikename;
+    private String nickname;
 
     private String qrcode;
 
@@ -93,17 +93,17 @@ public class Users {
     }
 
     /**
-     * @return nikename
+     * @return nickname
      */
-    public String getNikename() {
-        return nikename;
+    public String getNickname() {
+        return nickname;
     }
 
     /**
-     * @param nikename
+     * @param nickname
      */
-    public void setNikename(String nikename) {
-        this.nikename = nikename;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     /**
