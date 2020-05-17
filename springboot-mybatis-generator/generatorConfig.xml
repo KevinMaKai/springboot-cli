@@ -6,11 +6,11 @@
     <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
-        <property name="schema" value="muxin-dev"/>
+        <property name="schema" value="zhuxin-dev"/>
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.kevinmakai.springproject.cli.dao.base.BaseMapper"/>
+            <property name="mappers" value="BaseMapper"/>
         </plugin>
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/zhuxin-dev"
                         userId="root"
                         password="123456">
@@ -25,6 +25,6 @@
         <table tableName="chat_msg"></table>
         <table tableName="friends_request"></table>
         <table tableName="my_friends"></table>
-        <table schema="muxin-dev" tableName="users"></table>
+        <table schema="zhuxin-dev" tableName="users"></table>
     </context>
 </generatorConfiguration>
