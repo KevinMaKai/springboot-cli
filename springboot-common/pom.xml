@@ -22,7 +22,7 @@
         <fastjson.version>1.2.67</fastjson.version>
         <tomcat.version>9.0.22</tomcat.version>
         <mybatis-starter>2.0.1</mybatis-starter>
-        <junit-version>4.12</junit-version>
+        <junit-version>4.13.1</junit-version>
         <druid-starter-version>1.1.17</druid-starter-version>
     </properties>
 
